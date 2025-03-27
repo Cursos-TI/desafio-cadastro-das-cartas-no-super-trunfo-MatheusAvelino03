@@ -157,7 +157,7 @@ int main() {
     printf("Área (em KM²): %.2f\n", areaCid_2);
     printf("PIB: %.2f\n", pib_2);
     printf("Número de pontos Turísticos: %d\n", nPTuristicos_2);
-    printf("Densidade Populacional: %.2f\n hab/km²", densidadePopulacional2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional2);
     printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
 
     system("pause");
