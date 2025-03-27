@@ -42,6 +42,10 @@ int main() {
     float pib_1, pib_2;
     int nPTuristicos_1, nPTuristicos_2;
 
+    //intermediario - Variveis adicionais
+    float densidadePopulacional1, densidadePopulacional2;
+    float pibPerCapita1, pibPerCapita2;
+
     // ESTRADAS E SAÍDAS;
     // Intruções;
     printf("--------------------------SUPER TRUNFO---------------------------\n");
@@ -117,6 +121,19 @@ int main() {
     printf("-------------------------------------------------------------------\n");
     printf("\n");
 
+    //Calculos de densidade populacional e PIB per capita;
+
+    //Calculo carta 1
+    densidadePopulacional1 = (float) nPopulacao_1 / areaCid_1; //Densidade populacional;
+
+    pibPerCapita1 = (float) pib_1 / nPopulacao_1; //PIB per Capita;
+
+    //calculo carta2
+    densidadePopulacional2 = (float) nPopulacao_2 / areaCid_2; //Densidade populacional;
+
+    pibPerCapita2 = (float) pib_2 / nPopulacao_2; //PIB per Capita;
+
+    //Apresentação dos dados das cartas;
     printf("Carta 1:\n");
 
     printf("Estado: %c\n", estado1);
@@ -126,6 +143,8 @@ int main() {
     printf("Área (em KM²): %.2f\n", areaCid_1);
     printf("PIB: %.2f\n", pib_1);
     printf("Número de pontos Turísticos: %d\n", nPTuristicos_1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional1);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita1);
 
     printf("\n");
 
@@ -138,6 +157,8 @@ int main() {
     printf("Área (em KM²): %.2f\n", areaCid_2);
     printf("PIB: %.2f\n", pib_2);
     printf("Número de pontos Turísticos: %d\n", nPTuristicos_2);
+    printf("Densidade Populacional: %.2f\n hab/km²", densidadePopulacional2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
 
     system("pause");
     return 0;
