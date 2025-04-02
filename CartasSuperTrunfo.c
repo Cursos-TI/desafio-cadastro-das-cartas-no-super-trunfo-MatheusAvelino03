@@ -7,6 +7,7 @@
  *INSTITUIÇÃO: ESTACIO DE SÁ
  *PROF: SERGIO CARDOSO
  *DATA: 22/03/2025
+ *DATA ATUALIZAÇÃO FINAL TEMA 1: 02/04/2025
  */
 
 /*
@@ -14,25 +15,8 @@ Foram adicionados 3 getchar( ); nas linhas do código para limpa os residuos de 
 garantindo o funcionamento e a integridade dos valores inseridos nas variaveis.
 */
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
-int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
-    //--------------------------------------------------------------------------------------------------;
-
+// INICIALIZAÇÃO DO PROGRAMA;
+int main(void) {
     // VARIAVEIS;
     char estado1, estado2;
     char numCarta1[3], numCarta2[3];
@@ -45,6 +29,9 @@ int main() {
     //intermediario - Variveis adicionais
     float densidadePopulacional1, densidadePopulacional2;
     float pibPerCapita1, pibPerCapita2;
+
+    //Mestre - Variavel adicional
+    //float superPoder_1, superPoder_2;
 
     // ESTRADAS E SAÍDAS;
     // Intruções;
@@ -121,6 +108,8 @@ int main() {
     printf("-------------------------------------------------------------------\n");
     printf("\n");
 
+    //----------------------------------------------------------------------------------------;
+
     //Calculos de densidade populacional e PIB per capita;
 
     //Calculo carta 1
@@ -133,7 +122,30 @@ int main() {
 
     pibPerCapita2 = (float) pib_2 / nPopulacao_2; //PIB per Capita;
 
-    //Apresentação dos dados das cartas;
+    //----------------------------------------------------------------------------------------;
+
+    //calculos e lógica de comparação dos valores fornecidos das cartas;
+    //Usando operador ternário para fazer a troca, e a relação ser "False" ou "True";
+    //Sem estrutura de condições ou decições dentro do código;
+
+    //Calculo de Super Poder da Carta 1:
+
+    float inversaoDensidade_1 = densidadePopulacional1 / 1; //Inversão de densidade_1;
+
+    float superPoder_1 = areaCid_1 + pib_1 + pibPerCapita1 + inversaoDensidade_1 + (float) (
+                             nPopulacao_1 + nPTuristicos_1);
+
+    //Calculo de Super Poder da Carta 2:
+
+    float inversaoDensidade_2 = densidadePopulacional2 / 1; //Inversão de densidade_2;
+
+    float superPoder_2 = areaCid_2 + pib_2 + pibPerCapita2 + inversaoDensidade_2 + (float) (
+                             nPopulacao_2 + nPTuristicos_2);
+
+    //----------------------------------------------------------------------------------------;
+
+
+    //Apresentação dos dados na tela de ambas as cartas;
     printf("Carta 1:\n");
 
     printf("Estado: %c\n", estado1);
@@ -159,6 +171,44 @@ int main() {
     printf("Número de pontos Turísticos: %d\n", nPTuristicos_2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional2);
     printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
+
+    printf("\n");
+
+    //----------------------------------------------------------------------------------------;
+
+    /*
+     *Comparações dos atributos (exceto estado, código e nome), incluindo o Super Poder.
+     *Regra: A carta com o menor valor de densidade populacional vence;
+     *Regra: A carta com o maior valor em seus atributos vence;
+     *
+     */
+
+    //SINTAXE TERNÁRIO = CONDIÇÃO(RELACIONAL, VERDADEIRO OU FALSO) ?(SE) VERDADEIRO EXE: EXPRESSÃO1 :(SENÃO) FALSO EXE: ESPRESSÃO2
+    //COMPARAÇÃO CARTA 1 E 2 e colocada dentro de um printf;
+
+    //função  //txt      //Espc         //comparação relacional        //se verdade       //se falso
+    //printf("Populacao: %s (%d)\n", (nPopulacao_1 > nPopulacao_2) ? "Carta 1 venceu" : "Carta 2 venceu");
+
+    //----------------------------------------------------------------------------------------;
+
+    //Exibir na tela as comparações das cartas e definir em que caracteristicas cada carta venceu;
+    printf("Comparação das Cartas:\n");
+
+    printf("População: %s (%d)\n", (nPopulacao_1 > nPopulacao_2) ? "Carta 1 venceu" : "Carta 2 venceu");
+
+    printf("Área: %s (%d)\n", (areaCid_1 > areaCid_2) ? "Carta 1 venceu" : "Carta 2 venceu");
+
+    printf("PIB: %s (%d)\n", (pib_1 > pib_2) ? "Carta 1 venceu" : "Carta 2 venceu");
+
+    printf("Pontos Turísticos: %s (%d)\n", (nPTuristicos_1 > nPTuristicos_2) ? "Carta 1 venceu" : "Carta 2 venceu");
+
+    printf("Densidade Populacional: %s (%d)\n",
+           (densidadePopulacional1 > densidadePopulacional2) ? "Carta 1 venceu" : "Carta 2 venceu");
+
+    printf("PIB per Capita: %s (%d)\n", (pibPerCapita1 > pibPerCapita2) ? "Carta 1 venceu" : "Carta 2 venceu");
+
+    printf("Super Poder: %s (%d)\n", (superPoder_1 > superPoder_2) ? "Carta 1 venceu" : "Carta 2 venceu");
+
 
     system("pause");
     return 0;
